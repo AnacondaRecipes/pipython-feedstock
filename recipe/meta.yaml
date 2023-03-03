@@ -18,8 +18,17 @@ requirements:
   host:
     - pip
     - python
+    - wheel
   run:
     - python
+test:
+  imports:
+
+  commands:
+    - pip check
+
+
+
 
 about:
   home: The package home page
@@ -36,6 +45,6 @@ extra:
     - invalid_url
     
   anaconda-services:
-    ticket-ref: https://anaconda.zendesk.com/agent/tickets/30904
+    ref: https://anaconda.zendesk.com/agent/tickets/30904
     recipe-maintainers:
       - ianaobi
