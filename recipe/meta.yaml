@@ -1,0 +1,41 @@
+{% set name = "PIPython" %}
+{% set version = "2.9.0.4" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 678c30c44292b1e3fbfa5dd1c60ce8fda09ede97e160c4c6c9c592c55235320a
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+about:
+  home: The package home page
+  license: UNKNOWN
+  license_family: OTHER
+  license_file: 
+  summary: "Collection of libraries to use PI devices and process GCS data."
+  doc_url: 
+  dev_url: 
+
+
+extra:
+  skip-lints:
+    - invalid_url
+    
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/30904
+    recipe-maintainers:
+      - ianaobi
