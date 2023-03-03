@@ -36,6 +36,6 @@ extra:
     - invalid_url
     
   anaconda-services:
-    ref: https://anaconda.zendesk.com/agent/tickets/30904
+    ticket-ref: https://anaconda.zendesk.com/agent/tickets/30904
     recipe-maintainers:
       - ianaobi
