@@ -12,14 +12,26 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: "{{ PYTHON }} -m pip install --no-deps . -vv"
 
 requirements:
   host:
     - pip
     - python
+    - wheel
   run:
     - python
+test:
+  imports:
+  
+  requires:
+    - pip
+
+  commands:
+    - pip check
+
+
+
 
 about:
   home: The package home page
